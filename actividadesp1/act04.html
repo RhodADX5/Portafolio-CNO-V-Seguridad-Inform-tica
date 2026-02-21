@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 04 | Mecanismos de Defensa en Red</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p1.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 1</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 04: Implementación de Defensas en Red Perimetral</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento de la práctica (PDF):</p>
+                <a href="pdfs/178823-act04.pdf" download class="btn-read btn-pdf">Descargar Articulo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    La defensa en red se basa en el principio de <strong>privilegio mínimo</strong>. En esta actividad, se diseñó un conjunto de reglas de filtrado para un Firewall que protege una red local con servidores públicos (DMZ). El objetivo es permitir únicamente el tráfico legítimo (DNS, Web, Correo) y denegar todo lo demás por defecto, minimizando la superficie de ataque.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico: Configuración del Firewall</h3>
+                <p>Basado en la topología de red (Internet -> Firewall -> Servidores), se establecieron las siguientes políticas de <code>iptables</code>:</p>
+                
+                <h4>A. Políticas Base y Estado</h4>
+                <pre><code># Establecer política restrictiva
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+
+# Permitir tráfico de conexiones ya establecidas
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</code></pre>
+
+                <h4>B. Reglas para Servidores Críticos</h4>
+                <p>Para el <strong>Servidor Web (192.1.2.11)</strong> y el <strong>Servidor de Correo (192.1.2.10)</strong>, se habilitaron los puertos estándar garantizando que el origen y destino sean precisos:</p>
+                
+                <div style="background: #0f172a; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <ul>
+                        <li><strong>Tráfico DNS (TCP/UDP):</strong> Permitir consultas salientes de la red local.</li>
+                        <li><strong>Correo Entrante (SMTP):</strong> Apertura del puerto 25 para el servidor 192.1.2.10.</li>
+                        <li><strong>Acceso Web:</strong> Tráfico HTTP/HTTPS para el servidor 192.1.2.11.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>3. Material Multimedia</h3>
+                <p>Diagrama de la topología de red protegida por el Firewall perimetral:</p>
+                
+                
+
+                <div style="text-align: center; margin-top: 15px;">
+                    <p><i>Figura 1: Esquema de segmentación de red analizado en la práctica.</i></p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnica</h3>
+                <p>
+                    Esta práctica me permitió comprender la importancia de la <strong>inspección de estados (Stateful Inspection)</strong>. No basta con abrir un puerto; es crucial entender que una conexión establecida debe ser permitida de regreso automáticamente. Al configurar el Firewall para los servidores de correo y web de la UPSLP (en el escenario propuesto), aprendí que la precisión en las máscaras de subred y las IPs de origen evita el "spoofing" y otros ataques de suplantación comunes en la capa de red.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>Cheswick, W. R. (2003). Firewalls and Internet Security: Repelling the Wily Hacker.</li>
+                    <li>RFC 1918 - Address Allocation for Private Internets.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo (Ro)</p>
+    </footer>
+
+</body>
+</html>

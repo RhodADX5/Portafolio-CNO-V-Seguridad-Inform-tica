@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 02 | Servicios de Seguridad X.800 y RFC 4949</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p1.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 1</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 02: Análisis de Servicios de Seguridad</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento formal de la práctica (PDF):</p>
+                <a href="pdfs/178823-act02.pdf" download class="btn-read btn-pdf">Descargar Articulo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    Para garantizar la integridad en las interconexiones digitales, existen marcos de referencia fundamentales. 
+                    El estándar <strong>ITU-T X.800</strong> define la arquitectura de seguridad para el modelo OSI, mientras que el 
+                    <strong>RFC 4949</strong> funciona como un glosario exhaustivo que estandariza la terminología de seguridad en Internet. 
+                    En esta actividad, se analizan 10 escenarios de riesgo para identificar qué servicios y mecanismos fueron vulnerados.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico: Análisis de Escenarios</h3>
+                <p>Se aplicó el modelo X.800 para diagnosticar incidentes comunes. Aquí algunos ejemplos clave del análisis:</p>
+                
+                <div style="background: #0f172a; padding: 15px; border-left: 4px solid #38bdf8; margin-bottom: 20px;">
+                    <h4 style="color: #38bdf8; margin-top: 0;">Escenario: Intercepción de Mensajes</h4>
+                    <p><strong>Descripción:</strong> Un atacante captura correos electrónicos entre dos gerentes.</p>
+                    <ul>
+                        <li><strong>Servicio afectado:</strong> Confidencialidad de datos.</li>
+                        <li><strong>Mecanismo de seguridad:</strong> Cifrado (Encryption).</li>
+                    </ul>
+                </div>
+
+                <div style="background: #0f172a; padding: 15px; border-left: 4px solid #38bdf8; margin-bottom: 20px;">
+                    <h4 style="color: #38bdf8; margin-top: 0;">Escenario: Modificación de Transacciones</h4>
+                    <p><strong>Descripción:</strong> Se altera el monto de una transferencia bancaria en tránsito.</p>
+                    <ul>
+                        <li><strong>Servicio afectado:</strong> Integridad de datos.</li>
+                        <li><strong>Mecanismo de seguridad:</strong> Firma digital / Integridad de datos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>3. Material Multimedia</h3>
+                <p>Esquema visual de la relación entre servicios y mecanismos según la arquitectura X.800:</p>
+                
+                
+
+                <div style="text-align: center; margin-top: 10px;">
+                    <p><i>Figura 1: Interacción de capas de seguridad en el modelo OSI.</i></p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnica</h3>
+                <p>
+                    Desde mi perspectiva en este 9no semestre, el estudio de X.800 y RFC 4949 es la base de cualquier estrategia de defensa. 
+                    Entender la diferencia entre un <strong>ataque pasivo</strong> (intercepción) y uno <strong>activo</strong> (modificación) 
+                    permite al ingeniero seleccionar los controles adecuados. Sin una terminología estándar (RFC 4949), la comunicación en un 
+                    equipo de respuesta a incidentes sería caótica y poco efectiva.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>ITU-T X.800 (1991): Security architecture for Open Systems Interconnection.</li>
+                    <li>Shirey, R. (2007). RFC 4949: Internet Security Glossary, Version 2.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo (Ro)</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 03 | Filtrado con Iptables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p1.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 1</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 03: Interpretación de Políticas en Iptables</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento escaneado de la práctica (PDF):</p>
+                <a href="pdfs/178823-act03.pdf" download class="btn-read btn-pdf">Descargar Articulo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    Iptables es una herramienta de firewall a nivel de kernel en sistemas Linux que permite interceptar y manipular paquetes de red. 
+                    En esta práctica se profundiza en el flujo de los paquetes a través de las tablas (Filter, NAT, Mangle, Raw) y las cadenas (INPUT, OUTPUT, FORWARD), 
+                    elementos cruciales para la defensa perimetral de cualquier servidor.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico: Tablas y Comandos</h3>
+                <p>Se realizó la identificación de las tablas principales y su propósito en la seguridad de red:</p>
+                
+                <ul>
+                    <li><strong>FILTER:</strong> Tabla por defecto para el filtrado de paquetes.</li>
+                    <li><strong>NAT:</strong> Traducción de direcciones (Port Forwarding).</li>
+                    <li><strong>MANGLE:</strong> Modificación de calidad de servicio (QoS).</li>
+                </ul>
+
+                <p><strong>Traducción de Reglas de Seguridad:</strong></p>
+                <p>Un ejemplo clave analizado en la práctica permite el tráfico web seguro (HTTP/HTTPS) y SSH en una sola regla técnica:</p>
+                
+                <pre><code>iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 \
+-m state --state NEW,ESTABLISHED -j ACCEPT</code></pre>
+                
+                <p><i>Interpretación:</i> Esta regla permite conexiones entrantes por la interfaz eth0 hacia los puertos de administración (22) y servicios web (80, 443), siempre que sean conexiones nuevas o ya establecidas.</p>
+            </section>
+
+            <section>
+                <h3>3. Material Multimedia</h3>
+                <p>Diagrama del flujo de un paquete a través de las tablas y cadenas de Netfilter/Iptables:</p>
+                
+                
+
+                <div style="text-align: center; margin-top: 15px;">
+                    <p><i>Figura 1: Arquitectura interna de Netfilter en Linux.</i></p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnica</h3>
+                <p>
+                    Dominar la sintaxis de <code>iptables</code> es vital porque, a diferencia de un firewall comercial con interfaz gráfica, 
+                    trabajar directamente con el kernel de Linux nos da un control absoluto sobre el tráfico. En esta práctica aprendí que 
+                    un error en el orden de las reglas (específicamente con la política <code>DROP</code>) puede dejar incomunicado un servidor completo. 
+                    La seguridad empieza por entender cómo se mueve cada bit en la red.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>Netfilter Project (2024). Iptables man pages.</li>
+                    <li>RFC 791 - Internet Protocol Specification.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo (Ro)</p>
+    </footer>
+
+</body>
+</html>

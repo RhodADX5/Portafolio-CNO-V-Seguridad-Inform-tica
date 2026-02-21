@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 01 | Ciberataque PEMEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p1.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 1</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 01: Análisis del Ciberataque a PEMEX</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento formal de la práctica (PDF):</p>
+                <a href="pdfs/act01-Equipo4 (1).pdf" download class="btn-read btn-pdf">Descargar Articulo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    El presente análisis aborda el incidente de ciberseguridad ocurrido en 2019 contra Petróleos Mexicanos (PEMEX). 
+                    Este caso es un referente crítico en México sobre cómo el ransomware <code>DoppelPaymer</code> puede paralizar 
+                    infraestructuras críticas nacionales y generar pérdidas millonarias por falta de controles preventivos.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico</h3>
+                <p>
+                    El ataque se centró en el cifrado de archivos en estaciones de trabajo y servidores, exigiendo un rescate de 4.9 millones de dólares en Bitcoins. 
+                    Se identificó que el vector de ataque aprovechó vulnerabilidades en protocolos de red y la falta de segmentación adecuada.
+                </p>
+                <pre>
+Vector de Ataque: Ransomware DoppelPaymer
+Variante: BitPaymer / Dridex
+Impacto: +10,000 computadoras infectadas
+Protocolos afectados: SMB, RDP</pre>
+            </section>
+
+            <section>
+                <h3>3. Material Multimedia</h3>
+                <p>A continuación se muestra el diagrama del flujo de propagación del malware dentro de una red corporativa similar a la afectada:</p>
+                
+                
+
+                <div style="text-align: center;">
+                    <p><i><img src="imagenes/Linea de tiempo kill chain.png"></i></p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnica</h3>
+                <p>
+                    Como estudiante de 9no semestre, considero que el caso PEMEX evidencia que la ciberseguridad no es solo un gasto técnico, sino una inversión estratégica. 
+                    La falta de actualización en los sistemas (parcheo) y la carencia de un plan de respuesta a incidentes (IRP) transformaron un malware común en una crisis nacional. 
+                    Este aprendizaje subraya la importancia de marcos como <b>NIST</b> para la resiliencia operativa.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>Idaho National Laboratory (2022). Precursor Analysis Report: DoppelPaymer Ransomware attack on PEMEX.</li>
+                    <li>SecurityWeek (2019). Mexican oil company Pemex hit by ransomware.</li>
+                    <li>RFC 4949 - Internet Security Glossary.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo (Ro)</p>
+    </footer>
+
+</body>
+</html>
