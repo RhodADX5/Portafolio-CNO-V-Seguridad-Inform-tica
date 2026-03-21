@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR02 - Ingeniería Social</title>
+    <link rel="stylesheet" href="css_index.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <button class="menu-toggle">☰</button>
+</div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#notas">Notas</a></li>
+        <li><a href="index.html#herramientas">Herramientas</a></li>
+
+        <li>
+            <a href="#" class="dropdown-btn">Actividades <span class="arrow">▼</span></a>
+            <ul class="dropdown-container">
+                <li><a href="actividades_p1.html">Parcial 1</a></li>
+                <li><a href="actividades_p2.html">Parcial 2</a></li>
+                <li><a href="actividades_p3.html">Parcial 3</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="dropdown-btn">Proyectos <span class="arrow">▼</span></a>
+            <ul class="dropdown-container">
+                <li><a href="index.html#proyectos">Volver a Proyectos</a></li>
+                <li><a href="#pr02">PR02 - Ingeniería Social</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- HEADER -->
+<header>
+    <h1>PR02 - El eslabón más débil</h1>
+    <p>Diseño ético de una campaña de phishing</p>
+    <p>Alumno: Rodolfo (Ro)</p>
+    <p>Asignatura: Seguridad Informática</p>
+</header>
+
+<!-- MAIN -->
+<main>
+
+    <!-- INTRODUCCIÓN -->
+    <section id="intro">
+        <h2>Introducción</h2>
+        <p>
+            La ingeniería social constituye uno de los vectores de ataque más efectivos en la actualidad,
+            al explotar el factor humano como punto de entrada. Dentro de estas técnicas, el phishing
+            destaca por su capacidad de engañar a los usuarios mediante la suplantación de identidades
+            legítimas, permitiendo el acceso a información sensible.
+        </p>
+    </section>
+
+    <!-- MARCO TEÓRICO -->
+    <section id="marco">
+        <h2>Marco Teórico</h2>
+        <p>
+            La ingeniería social representa una de las principales amenazas dentro del ámbito de la ciberseguridad, al centrarse en la manipulación del factor humano en lugar de vulnerabilidades técnicas. 
+            A diferencia de otros vectores de ataque, este tipo de amenazas explota la confianza, la urgencia y la falta de concientización de los usuarios para obtener acceso no autorizado a sistemas o información sensible.
+            <br><br>El phishing constituye una de las técnicas más utilizadas dentro de la ingeniería social, consistiendo en la suplantación de entidades legítimas mediante correos electrónicos, sitios web o mensajes falsificados con el objetivo de engañar a los usuarios. Debido a su alta efectividad, las organizaciones han adoptado estrategias de simulación de ataques como mecanismo de evaluación y entrenamiento, permitiendo medir el nivel de vulnerabilidad humana ante este tipo de amenazas.
+            <br><br>Las plataformas de simulación de phishing, como KnowBe4, Proofpoint o Cofense, integran herramientas que permiten diseñar campañas controladas, evaluar el comportamiento de los usuarios y generar métricas clave para la toma de decisiones en seguridad. Estas soluciones no solo buscan identificar fallos, sino también fortalecer la cultura de ciberseguridad mediante entrenamiento continuo.
+            <br><br>Entre las métricas más relevantes utilizadas en estas plataformas destacan el Click Rate, que mide el porcentaje de usuarios que interactúan con enlaces maliciosos; el Reporting Rate, que indica la cantidad de usuarios que detectan y reportan el intento de ataque; y el Risk Score, que permite clasificar el nivel de riesgo asociado al comportamiento de los usuarios dentro de la organización. Estas métricas permiten transformar el riesgo humano en indicadores cuantificables.
+            <br><br>Desde un enfoque ético, la implementación de simulaciones de phishing debe realizarse bajo principios de transparencia, consentimiento informado y protección de datos personales. No se deben recolectar credenciales reales ni generar impactos negativos en los usuarios participantes, ya que el objetivo principal es educativo y preventivo, no punitivo. En este sentido, la simulación de ataques controlados se posiciona como una herramienta fundamental para la gestión del riesgo humano en ciberseguridad.
+        </p>
+    </section>
+
+    <!-- PLATAFORMAS -->
+    <section id="plataformas">
+    <h2>Análisis de Plataformas</h2>
+
+    <div class="actividades-grid">
+
+        <div class="actividad-card">
+            <span class="tag">KnowBe4</span>
+            <h3>Plataforma de concientización</h3>
+            <p><strong>Descripción:</strong> Plataforma líder que combina simulaciones de phishing con entrenamiento continuo automatizado.</p>
+            <p><strong>Métricas:</strong> Click Rate, Reporting Rate, Phish-prone Percentage.</p>
+            <p><strong>Enfoque:</strong> Educativo-preventivo.</p>
+            <p><strong>Fortalezas:</strong> Automatización, contenido amplio, métricas claras.</p>
+            <p><strong>Debilidades:</strong> Puede volverse predecible si no se personaliza.</p>
+        </div>
+
+        <div class="actividad-card">
+            <span class="tag">Proofpoint</span>
+            <h3>Seguridad empresarial</h3>
+            <p><strong>Descripción:</strong> Plataforma enfocada en análisis conductual y protección avanzada del correo.</p>
+            <p><strong>Métricas:</strong> Risk Score, User Vulnerability Index.</p>
+            <p><strong>Enfoque:</strong> Defensivo-analítico.</p>
+            <p><strong>Fortalezas:</strong> Integración empresarial, análisis avanzado.</p>
+            <p><strong>Debilidades:</strong> Alto costo y complejidad.</p>
+        </div>
+
+        <div class="actividad-card">
+            <span class="tag">Cofense</span>
+            <h3>Respuesta a phishing</h3>
+            <p><strong>Descripción:</strong> Plataforma orientada a la detección y respuesta mediante reportes de usuarios.</p>
+            <p><strong>Métricas:</strong> Reporting Rate, Detection Accuracy.</p>
+            <p><strong>Enfoque:</strong> Respuesta a incidentes.</p>
+            <p><strong>Fortalezas:</strong> Integración con SOC, detección temprana.</p>
+            <p><strong>Debilidades:</strong> Dependencia del usuario.</p>
+        </div>
+
+        <div class="actividad-card">
+            <span class="tag">Mimecast</span>
+            <h3>Seguridad de correo</h3>
+            <p><strong>Descripción:</strong> Plataforma integral que combina protección de correo y simulación de phishing.</p>
+            <p><strong>Métricas:</strong> Awareness Score, Click Rate.</p>
+            <p><strong>Enfoque:</strong> Preventivo-integrado.</p>
+            <p><strong>Fortalezas:</strong> Solución unificada, protección en tiempo real.</p>
+            <p><strong>Debilidades:</strong> Menor profundidad en entrenamiento.</p>
+        </div>
+
+        <div class="actividad-card">
+            <span class="tag">Infosec IQ</span>
+            <h3>Educación en seguridad</h3>
+            <p><strong>Descripción:</strong> Plataforma enfocada en capacitación y concientización de usuarios.</p>
+            <p><strong>Métricas:</strong> Completion Rate, Risk Score.</p>
+            <p><strong>Enfoque:</strong> Educativo.</p>
+            <p><strong>Fortalezas:</strong> Fácil uso, contenido didáctico.</p>
+            <p><strong>Debilidades:</strong> Simulaciones básicas.</p>
+        </div>
+
+        <div class="actividad-card">
+            <span class="tag">Hoxhunt</span>
+            <h3>Entrenamiento con IA</h3>
+            <p><strong>Descripción:</strong> Plataforma que utiliza inteligencia artificial para personalizar ataques simulados.</p>
+            <p><strong>Métricas:</strong> Behavioral Risk Score, Engagement Rate.</p>
+            <p><strong>Enfoque:</strong> Educativo-adaptativo.</p>
+            <p><strong>Fortalezas:</strong> Personalización avanzada, uso de IA.</p>
+            <p><strong>Debilidades:</strong> Implementación compleja.</p>
+        </div>
+
+        <div class="actividad-card">
+            <span class="tag">Phished</span>
+            <h3>Automatización</h3>
+            <p><strong>Descripción:</strong> Plataforma que adapta campañas según el comportamiento del usuario.</p>
+            <p><strong>Métricas:</strong> Click Rate, Failure Rate.</p>
+            <p><strong>Enfoque:</strong> Educativo-automatizado.</p>
+            <p><strong>Fortalezas:</strong> Escalable, automatización total.</p>
+            <p><strong>Debilidades:</strong> Menor control manual.</p>
+        </div>
+
+        <div class="actividad-card">
+            <span class="tag">NINJIO</span>
+            <h3>Concientización interactiva</h3>
+            <p><strong>Descripción:</strong> Plataforma basada en storytelling para capacitación en seguridad.</p>
+            <p><strong>Métricas:</strong> Engagement Rate, Awareness Score.</p>
+            <p><strong>Enfoque:</strong> Educativo.</p>
+            <p><strong>Fortalezas:</strong> Alto engagement, contenido atractivo.</p>
+            <p><strong>Debilidades:</strong> Menor enfoque técnico.</p>
+        </div>
+
+    </div>
+</section>
+
+    <!-- TABLA -->
+    <section id="tabla">
+    <h2>Tabla Comparativa de Plataformas de Phishing Simulation</h2>
+
+    <div style="overflow-x:auto;">
+        <table border="1" width="100%" style="border-collapse: collapse; text-align: left; ">
+
+            <tr>
+                <th>Plataforma</th>
+                <th>Métricas</th>
+                <th>Enfoque</th>
+                <th>Entrenamiento</th>
+                <th>Integración</th>
+                <th>Ética</th>
+                <th>Limitaciones</th>
+            </tr>
+
+            <tr>
+                <td>KnowBe4</td>
+                <td>Click Rate, Reporting Rate, PPP</td>
+                <td>Educativo</td>
+                <td>Automatizado</td>
+                <td>Media</td>
+                <td>Alta (no recolecta credenciales)</td>
+                <td>Puede volverse predecible</td>
+            </tr>
+
+            <tr>
+                <td>Proofpoint</td>
+                <td>Risk Score, Behavior Analysis</td>
+                <td>Defensivo</td>
+                <td>Avanzado</td>
+                <td>Alta</td>
+                <td>Alta (enfoque corporativo)</td>
+                <td>Alto costo y complejidad</td>
+            </tr>
+
+            <tr>
+                <td>Cofense</td>
+                <td>Reporting Rate, Response Time</td>
+                <td>Respuesta</td>
+                <td>Interactivo</td>
+                <td>Alta (SOC)</td>
+                <td>Alta</td>
+                <td>Dependencia del usuario</td>
+            </tr>
+
+            <tr>
+                <td>Mimecast</td>
+                <td>Click Rate, Awareness Score</td>
+                <td>Preventivo</td>
+                <td>Integrado</td>
+                <td>Alta</td>
+                <td>Alta</td>
+                <td>Dependencia del ecosistema</td>
+            </tr>
+
+            <tr>
+                <td>Infosec IQ</td>
+                <td>Completion Rate, Risk Score</td>
+                <td>Educativo</td>
+                <td>Didáctico</td>
+                <td>Media</td>
+                <td>Alta</td>
+                <td>Simulaciones básicas</td>
+            </tr>
+
+            <tr>
+                <td>Hoxhunt</td>
+                <td>Behavioral Risk Score, Engagement</td>
+                <td>Adaptativo</td>
+                <td>Personalizado (IA)</td>
+                <td>Media</td>
+                <td>Alta (control ético de datos)</td>
+                <td>Implementación compleja</td>
+            </tr>
+
+            <tr>
+                <td>Phished</td>
+                <td>Click Rate, Failure Rate</td>
+                <td>Automatizado</td>
+                <td>Adaptativo</td>
+                <td>Media</td>
+                <td>Alta</td>
+                <td>Menor control manual</td>
+            </tr>
+
+            <tr>
+                <td>NINJIO</td>
+                <td>Engagement, Awareness Score</td>
+                <td>Educativo</td>
+                <td>Interactivo</td>
+                <td>Baja</td>
+                <td>Alta</td>
+                <td>Poca simulación técnica</td>
+            </tr>
+
+        </table>
+    </div>
+</section>
+
+    <!-- QUIZ -->
+    <section id="quiz">
+        <h2>Phishing Quiz Interactivo</h2>
+
+        <!-- Botón inicial -->
+        <div id="inicio-quiz">
+            <button onclick="iniciarQuiz()">Empezar Quiz</button>
+        </div>
+
+        <!-- Contenedor del quiz -->
+        <div class="actividad-card" id="quiz-container" style="display: none;">
+            <p id="pregunta"></p>
+
+            <button onclick="responder(true)">Es Phishing</button>
+            <button onclick="responder(false)">Es Legítimo</button>
+
+            <p id="feedback"></p>
+            <p id="progreso"></p>
+        </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="resultados" style="display: none;">
+        <h2>Resultado Final</h2>
+        <p id="score"></p>
+        <p id="nivel"></p>
+    </section>
+
+    <!-- CONCLUSIÓN -->
+    <section id="conclusion">
+        <h2>Conclusión</h2>
+        <p>
+            La simulación de phishing permite identificar debilidades en el factor humano,
+            reforzando la concientización y mejorando la postura de seguridad en las organizaciones.
+        </p>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Rodolfo - Portafolio de Ciberseguridad</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="js_index.js"></script>
+
+</body>
+</html>

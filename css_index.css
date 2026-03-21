@@ -280,3 +280,65 @@
 .rotate {
     transform: rotate(180deg);
 }
+
+/*Css de proyectos*/
+.proyecto-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+/*Tablas*/
+table th {
+    background-color: #1e293b;
+    color: #38bdf8;
+    padding: 10px;
+}
+
+table td {
+    padding: 10px;
+}
+
+table tr:hover {
+    background-color: #0f172a;
+}
+/*Quiz*/
+button {
+    margin: 10px 5px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;   
+    border-radius: 5px;
+    background-color: #38bdf8;
+    color: #020617;
+}
+
+#feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#progreso {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+#inicio-quiz {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#inicio-quiz button {
+    background-color: #38bdf8;
+    color: #020617;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#inicio-quiz button:hover {
+    background-color: #0ea5e9;
+}
