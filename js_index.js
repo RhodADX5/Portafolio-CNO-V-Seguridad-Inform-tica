@@ -147,7 +147,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // ==========================
     // RESPUESTA
     // ==========================
-    window.responder = function responder(respuestaUsuario) {
+    window.responder = function(respuestaUsuario) {
+
+        //EVITA ERROR
+        if (indice >= preguntas.length) return;
+
         const correcta = preguntas[indice].respuesta;
 
         if (respuestaUsuario === correcta) {
@@ -157,36 +161,31 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("feedback").textContent = "❌ Incorrecto";
         }
 
-        document.getElementById("feedback").textContent += " - " + preguntas[indice].explicacion;
+        document.getElementById("feedback").textContent +=
+            " - " + preguntas[indice].explicacion;
 
         indice++;
 
-        setTimeout(cargarPregunta, 2000);
-    }
+        setTimeout(cargarPregunta, 1500);
+    };
 
     // ==========================
     // RESULTADO FINAL
     // ==========================
     function mostrarResultado() {
-        document.getElementById("pregunta").textContent = "";
-        document.getElementById("progreso").textContent = "";
-        document.getElementById("feedback").textContent = "";
+
+        document.getElementById("quiz-container").style.display = "none";
+        document.getElementById("resultados").style.display = "block";
 
         document.getElementById("score").textContent = `Puntaje: ${puntaje}/10`;
 
         let nivel = "";
-
-        if (puntaje <= 4) {
-            nivel = "Alto riesgo (vulnerable a phishing)";
-        } else if (puntaje <= 7) {
-            nivel = "Riesgo medio";
-        } else {
-            nivel = "Buen nivel de seguridad";
-        }
+        if (puntaje <= 4) nivel = "Alto riesgo";
+        else if (puntaje <= 7) nivel = "Riesgo medio";
+        else nivel = "Buen nivel";
 
         document.getElementById("nivel").textContent = nivel;
     }
-
     // ---------------------------
     // INICIAR QUIZ
     // ---------------------------
@@ -200,6 +199,66 @@ document.addEventListener("DOMContentLoaded", function() {
 
         cargarPregunta();
     };
+
+    // ---------------------------
+// GUARDAR RESULTADO
+// ---------------------------
+window.guardarResultado = function() {
+
+    const nombre = document.getElementById("nombreUsuario").value.trim();
+
+    if (!nombre) {
+        alert("Ingresa tu nombre");
+        return;
+    }
+
+    const nuevoResultado = {
+        nombre: nombre,
+        puntaje: puntaje
+    };
+
+    // Obtener ranking existente
+    let ranking = JSON.parse(localStorage.getItem("rankingQuiz")) || [];
+
+    // Agregar nuevo resultado
+    ranking.push(nuevoResultado);
+
+    // Ordenar (mayor puntaje primero)
+    ranking.sort((a, b) => b.puntaje - a.puntaje);
+
+    // Limitar a top 10
+    ranking = ranking.slice(0, 10);
+
+    // Guardar en localStorage
+    localStorage.setItem("rankingQuiz", JSON.stringify(ranking));
+
+    mostrarRanking();
+};
+
+// ---------------------------
+// MOSTRAR RANKING
+// ---------------------------
+function mostrarRanking() {
+
+    const lista = document.getElementById("lista-ranking");
+
+    if (!lista) return;
+
+    lista.innerHTML = "";
+
+    const ranking = JSON.parse(localStorage.getItem("rankingQuiz")) || [];
+
+    ranking.forEach((user, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${user.nombre} - ${user.puntaje}/10`;
+        lista.appendChild(li);
+    });
+}
+
+// ---------------------------
+// CARGAR RANKING AL INICIO
+// ---------------------------
+mostrarRanking();
 
 });
 
