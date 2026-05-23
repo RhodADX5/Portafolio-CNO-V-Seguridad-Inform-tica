@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 17 | CVSS v3.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p3.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 3</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 17: Cuantificación de Riesgo Operativo Mediante CVSS v3.1</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento formal de la práctica (PDF):</p>
+                <a href="pdfs/act17-Equipo4.pdf" download class="btn-read btn-pdf">Descargar Artículo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    En el ecosistema defensivo de una organización, la detección técnica de fallas lógicas es insuficiente si no se asocia a un marco de priorización estandarizado. El modelo <code>CVSS v3.1</code> (Common Vulnerability Scoring System) permite normalizar métricas matemáticas de explotabilidad y de impacto, abstrayendo factores de riesgo en puntuaciones reproducibles para priorizar esfuerzos de parchado y remediación de forma eficiente.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico</h3>
+                <p>
+                    Se analizó un escenario técnico basado en una brecha descubierta en una plataforma web interna de la organización. La vulnerabilidad permite la ejecución remota de código por red, pero se encuentra restringida por requerimientos de autorización internos rígidos y el daño se encapsula de manera local. Se construyó la siguiente cadena del vector métrico:
+                </p>
+                <pre>
+Vector String Oficial Calculado:
+CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L
+
+Métricas de Explotabilidad:
+• Attack Vector (AV): Network (N)
+• Attack Complexity (AC): Low (L)
+• Privileges Required (PR): High (H)
+• User Interaction (UI): None (N)
+
+Métricas de Impacto:
+• Scope (S): Unchanged (U)
+• Confidentiality (C): Low (L)
+• Integrity (I): Low (L)
+• Availability (A): Low (L)</pre>
+                <p>
+                    La evaluación final arrojó un **Base Score de 4.7**, clasificando la severidad en un rango **Medio**. Aunque la facilidad técnica intrínseca es alta (Complejidad Baja) y no requiere interacción de usuarios ajenos, el requerimiento imperativo de contar con privilegios administrativos previos (PR:H) frena la severidad del fallo.
+                </p>
+            </section>
+
+            <section>
+                <h3>3. Material Multimedia</h3>
+                <p>A continuación se integra el gráfico analítico obtenido de la calculadora oficial de la FIRST para la generación del puntaje matemático del caso de estudio:</p>
+                
+                <!-- ESPACIO PARA TUS IMÁGENES -->
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="imagenes/cvss_calculator_score.png" alt="Cálculo matemático de la métrica CVSS v3.1" class="img-evidencia">
+                    <p style="color: #cbd5f5; font-size: 0.85rem; font-style: italic;">Figura 17.1: Desglose de subcalificaciones para Explotabilidad e Impacto (Puntaje: 4.7 Medio).</p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnico-Académica</h3>
+                <p>
+                    El análisis de métricas como CVSS v3.1 previene que los administradores de sistemas gasten recursos valiosos conteniendo alarmas técnicas sobrevaloradas. Este caso en particular demuestra que una vulnerabilidad expuesta en la red pública de internet (AV:N) puede controlarse eficientemente si las políticas de acceso del sistema siguen el principio de menor privilegio (PR:H). La mitigación estratégica debe centrarse siempre en el control robusto de las identidades corporativas.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>FIRST (2026). Common Vulnerability Scoring System v3.1 Specification Document.</li>
+                    <li>NIST National Vulnerability Database (NVD) - Metric Guide Lines.</li>
+                    <li>RFC 7384 - Security Requirements for Time Protocols Vulnerability Frameworks.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo Cavazos Zacarías</p>
+    </footer>
+
+</body>
+</html>

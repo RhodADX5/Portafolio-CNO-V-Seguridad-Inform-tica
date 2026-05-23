@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 16 | Dilemas Éticos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p3.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 3</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 16: Análisis de Dilemas Éticos y Delitos Informáticos</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento formal de la práctica (PDF):</p>
+                <a href="pdfs/act16-Equipo4.pdf" download class="btn-read btn-pdf">Descargar Artículo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    El ejercicio del analista en ciberseguridad demanda directrices normativas claras para evitar el abuso de privilegios. El acceso extendido a infraestructuras críticas coloca al profesional técnico ante decisiones donde colisionan la obediencia jerárquica, la conveniencia personal o la curiosidad técnica contra los marcos jurídicos establecidos y los derechos fundamentales de privacidad y confidencialidad corporativa[cite: 9].
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico</h3>
+                <p>
+                    Se evaluaron tres escenarios críticos bajo metodologías éticas complejas (Ética Utilitarista, Enfoque de Hechos y Enfoque del Bien Común), determinando su tipificación legal y los mandamientos éticos vulnerados:
+                </p>
+                
+                <p><b>Caso 1: Acceso no autorizado interno a correo directivo.</b> Un compañero revisa logs y buzones privados para "identificar fugas". Representa un abuso de privilegios puros encuadrado como un delito informático tipificado en el <code>Artículo 211 bis</code> del Código Penal Federal de México. Se violentan los mandamientos informáticos 3, 7 y 10 por fisgoneo ilegal.</p>
+                
+                <p><b>Caso 2: Vulnerabilidad financiera crítica no firmada.</b> Hallazgo de un fallo lógico que permite extracción ilícita de fondos previo a la formalización contractual. La decisión ética demanda divulgación responsable inmediata. Explotarla constituiría un fraude informático bancario sancionado penalmente, ignorando el principio utilitarista de buscar el bien común.</p>
+                
+                <p><b>Caso 3: Uso de herramientas OSINT para coacción psicológica.</b> Presión sobre un sospechoso explotando datos extraídos de fuentes abiertas. Al ser un <code>Delito Incidental</code>, la computadora funge meramente como facilitador para actividades delictivas externas como amenazas y acoso.</p>
+            </section>
+
+            <section>
+                <h3>3. Matriz de Decisiones Éticas y Jurídicas</h3>
+                <p>A continuación se presenta la sistematización analítica del reporte, cruzando los enfoques éticos aplicados con el marco normativo de la legislación mexicana:</p>
+                
+                <div style="overflow-x: auto; margin: 25px 0; border: 1px solid #1f2937; border-radius: 8px;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; color: #cbd5f5; background-color: #0b1329;">
+                        <thead>
+                            <tr style="background-color: #1e293b; border-bottom: 2px solid #38bdf8; color: #38bdf8;">
+                                <th style="padding: 12px; font-weight: bold;">Escenario Analizado</th>
+                                <th style="padding: 12px; font-weight: bold;">Enfoques de Justificación Ética</th>
+                                <th style="padding: 12px; font-weight: bold;">Mandamientos Vulnerados</th>
+                                <th style="padding: 12px; font-weight: bold;">Clasificación y Marco Legal (México)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Escenario 1 -->
+                            <tr style="border-bottom: 1px solid #1f2937; vertical-align: top;">
+                                <td style="padding: 12px; font-weight: bold; color: #f472b6; width: 20%;">
+                                    1. Acceso Interno No Autorizado <br>
+                                    <span style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">(Revisión ilegal de correos del Director)</span>
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem; line-height: 1.4;">
+                                    <b>Utilitarista:</b> Penalizar previene el abuso de poder técnico y promueve la confianza.<br>
+                                    <b>Hechos:</b> Hubo acceso no autorizado explícito registrado en logs sin orden formal.<br>
+                                    <b>Bien Común:</b> Evita la erosión de la confianza en el área de TI.
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem;">
+                                    <span style="color: #ef4444;">✖ M3:</span> Fisgoneo de archivos.<br>
+                                    <span style="color: #ef4444;">✖ M7:</span> Abuso de recursos informáticos.<br>
+                                    <span style="color: #ef4444;">✖ M10:</span> Falta de consideración/respeto.
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem; width: 25%;">
+                                    <b style="color: #ef4444;">Delito Informático Puro</b><br>
+                                    Encadrado en el <u>Artículo 211 bis</u> del Código Penal Federal (Acceso ilícito a sistemas protegidos).
+                                </td>
+                            </tr>
+
+                            <!-- Escenario 2 -->
+                            <tr style="border-bottom: 1px solid #1f2937; vertical-align: top; background-color: #0f172a;">
+                                <td style="padding: 12px; font-weight: bold; color: #f472b6;">
+                                    2. Vulnerabilidad Financiera Crítica <br>
+                                    <span style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">(Fallo lógico de extracción de dinero sin contrato)</span>
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem; line-height: 1.4;">
+                                    <b>Utilitarista:</b> La divulgación responsable previene el daño masivo a los usuarios.<br>
+                                    <b>Hechos:</b> El vacío contractual no autoriza el robo; el acceso tiene alcance específico.<br>
+                                    <b>Bien Común:</b> Los analistas deben actuar como guardianes del ecosistema financiero.
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem;">
+                                    <span style="color: #ef4444;">✖ M1:</span> Daño directo a terceros.<br>
+                                    <span style="color: #ef4444;">✖ M4:</span> Uso de PC para robar.<br>
+                                    <span style="color: #ef4444;">✖ M7:</span> Explotación no autorizada.
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem;">
+                                    <b style="color: #ef4444;">Delito Informático Puro</b><br>
+                                    Tipificado en el <u>Artículo 211 bis</u> del CPF y sanciones de la Ley Federal de Instituciones de Crédito (Fraude digital).
+                                </td>
+                            </tr>
+
+                            <!-- Escenario 3 -->
+                            <tr style="vertical-align: top;">
+                                <td style="padding: 12px; font-weight: bold; color: #f472b6;">
+                                    3. Coacción Mediante OSINT <br>
+                                    <span style="font-size: 0.8rem; color: #94a3b8; font-weight: normal;">(Presión psicológica ordenada por un superior)</span>
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem; line-height: 1.4;">
+                                    <b>Utilitarista:</b> La coacción contamina evidencias y vulnera a familiares inocentes.<br>
+                                    <b>Hechos:</b> El uso intimidatorio de datos públicos viola el principio de legalidad.<br>
+                                    <b>Bien Común:</b> Preserva las libertades civiles frente a abusos de inteligencia.
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem;">
+                                    <span style="color: #ef4444;">✖ M1:</span> Daño psicológico directo.<br>
+                                    <span style="color: #ef4444;">✖ M3:</span> Intimidación con datos personales.<br>
+                                    <span style="color: #ef4444;">✖ M10:</span> Ataque a la dignidad humana.
+                                </td>
+                                <td style="padding: 12px; font-size: 0.85rem;">
+                                    <b style="color: #fbbf24;">Delito Incidental</b><br>
+                                    Violación a la Ley Federal de Protección de Datos Personales (LFPDPPP) y tipificación de amenazas o acoso en códigos locales.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.8rem; font-style: italic; text-align: center;">Tabla 16.1: Matriz de cumplimiento ético y asignación penal para auditorías de seguridad (Equipo 4 - Curso PD02).</p>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnica</h3>
+                <p>
+                    La ciberseguridad nunca justifica la ilegalidad ni el quebranto del debido proceso. Disponer de privilegios de superusuario o de capacidades lógicas avanzadas no exime de cumplir canales institucionales y procedimientos de auditoría formales. El establecimiento de esquemas corporativos de <i>Compliance</i> e integridad resguarda el valor del analista, garantizando que el software y la inteligencia de fuentes abiertas sean instrumentos de protección y nunca de amenaza social.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>Código Penal Federal de México - Artículo 211 bis sobre Acceso Ilícito a Sistemas.</li>
+                    <li>Computer Ethics Institute (CEI) - The Ten Commandments of Computer Ethics.</li>
+                    <li>Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo Cavazos Zacarías</p>
+    </footer>
+
+</body>
+</html>

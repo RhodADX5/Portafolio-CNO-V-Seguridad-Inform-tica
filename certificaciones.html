@@ -4,235 +4,25 @@
     <meta charset="UTF-8">
     <title>Certificaciones | Portafolio Rodolfo Cavazos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a tu archivo CSS externo -->
     <link rel="stylesheet" href="css_index.css">
-    <style>
-        /* ── Tabs ── */
-        .cert-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cert-tab-btn {
-            background-color: #1e293b;
-            color: #e5e7eb;
-            border: 1px solid #1f2937;
-            border-radius: 6px;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-            text-align: left;
-            /* override global button styles */
-            margin: 0;
-        }
-
-        .cert-tab-btn:hover {
-            background-color: #0f172a;
-            border-color: #38bdf8;
-            color: #38bdf8;
-        }
-
-        .cert-tab-btn.active {
-            background-color: #38bdf8;
-            color: #020617;
-            border-color: #38bdf8;
-            font-weight: bold;
-        }
-
-        /* ── Paneles ── */
-        .cert-panel {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .cert-panel.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ── Tarjeta de certificación ── */
-        .cert-card {
-            background-color: #020617;
-            border: 1px solid #1f2937;
-            border-left: 4px solid #38bdf8;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cert-card h3 {
-            color: #38bdf8;
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-
-        .cert-card p {
-            color: #cbd5e1;
-            line-height: 1.7;
-        }
-
-        .cert-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cert-tag {
-            background-color: #1e293b;
-            color: #38bdf8;
-            font-size: 0.75rem;
-            padding: 2px 10px;
-            border-radius: 12px;
-            border: 1px solid #38bdf8;
-            text-transform: uppercase;
-        }
-
-        /* ── Evidencias ── */
-        .cert-evidencias {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1.2rem;
-        }
-
-        @media (max-width: 600px) {
-            .cert-evidencias { grid-template-columns: 1fr; }
-            .cert-tabs { flex-direction: column; }
-        }
-
-        .cert-evidencia-box {
-            background-color: #0f172a;
-            border: 1px dashed #1f2937;
-            border-radius: 8px;
-            padding: 1.2rem;
-            text-align: center;
-        }
-
-        .cert-evidencia-box h4 {
-            color: #38bdf8;
-            margin: 0 0 0.8rem 0;
-            font-size: 0.95rem;
-        }
-
-        .cert-evidencia-box .placeholder {
-            color: #475569;
-            font-size: 0.85rem;
-            font-style: italic;
-            margin-bottom: 0.8rem;
-        }
-
-        .cert-evidencia-box .placeholder-icon {
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .btn-evidencia {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background-color: #38bdf8;
-            color: #020617 !important;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            transition: background-color 0.2s;
-            border: none;
-            cursor: pointer;
-            margin: 4px 2px;
-        }
-
-        .btn-evidencia:hover {
-            background-color: #0ea5e9;
-        }
-
-        .btn-evidencia.disabled {
-            background-color: #1e293b;
-            color: #475569 !important;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
-        .btn-pdf-cert {
-            background-color: #ef4444 !important;
-            color: white !important;
-        }
-
-        .btn-pdf-cert:hover {
-            background-color: #dc2626 !important;
-        }
-
-        /* ── Badge placeholder ── */
-        .badge-placeholder {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px dashed #38bdf8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 0.8rem auto;
-            color: #38bdf8;
-        }
-
-        /* ── Credly embed wrapper ── */
-        .credly-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        /* ── Intro de la sección ── */
-        .cert-intro {
-            background-color: #020617;
-            border-left: 4px solid #38bdf8;
-            border-radius: 4px;
-            padding: 1.2rem 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .cert-intro h2 { color: #38bdf8; margin-top: 0; }
-        .cert-intro p  { color: #cbd5e1; margin: 0.4rem 0 0 0; }
-
-        .student-info {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            margin-top: 0.8rem;
-        }
-
-        .student-info span {
-            background-color: #1e293b;
-            color: #38bdf8;
-            border: 1px solid #38bdf8;
-            border-radius: 4px;
-            padding: 4px 12px;
-            font-size: 0.85rem;
-        }
-    </style>
 </head>
 
 <body>
 
 <header>
+    <!-- Barra superior fija sincronizada con tu CSS -->
     <div class="topbar">
-        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-        <span class="site-title">Portafolio | Seguridad Informática</span>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <span class="site-title" style="margin-left: 15px; font-weight: bold; color: #e5e7eb;">Portafolio | Seguridad Informática</span>
     </div>
 
+    <h1>Sección: Certificados – PD05</h1>
     <p>Asignatura: CNO V – Seguridad Informática</p>
     <p>Universidad Politécnica de San Luis Potosí</p>
     <p>Periodo: 2026-1</p>
 
+    <!-- Sidebar con navegación interna -->
     <nav class="sidebar" id="sidebar">
         <ul>
             <li><a href="index.html#inicio">Inicio</a></li>
@@ -253,7 +43,7 @@
                     <li><a href="proyectoR02.html">Proyecto 02: El Eslabón más Débil</a></li>
                 </ul>
             </li>
-            <li><a href="certificaciones.html" style="color:#38bdf8; font-weight:bold;">🏅 Certificaciones</a></li>
+            <li><a href="certificaciones.html" style="color:#38bdf8; font-weight:bold;">Certificados</a></li>
         </ul>
     </nav>
 
@@ -262,289 +52,226 @@
 
 <main>
 
-    <!-- Encabezado -->
-    <div class="cert-intro">
-        <h2>🏅 Certificaciones – PD05</h2>
-        <p>Reflexión profesional sobre el proceso de certificación en ciberseguridad. Cada pestaña documenta una certificación obtenida, incluyendo aprendizajes clave, retos y evidencias verificables.</p>
-        <div class="student-info">
-            <span>👤 Rodolfo Cavazos Zacarías</span>
-            <span>🎓 Matrícula: 178823</span>
-            <span>📅 Periodo: 2026-1</span>
+    <!-- Introducción que aprovecha tu maquetación de secciones -->
+    <section>
+        <h2>Reflexión Profesional</h2>
+        <p>Análisis estructurado sobre el proceso de certificación en ciberseguridad. Cada pestaña documenta los conocimientos técnicos asimilados, los desafíos resueltos y los identificadores de acreditación verificables de forma externa.</p>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem;">
+            <span class="tag">Rodolfo Cavazos Zacarías</span>
+            <span class="tag">Matrícula: 178823</span>
+            <span class="tag">Periodo: 2026-1</span>
         </div>
+    </section>
+
+    <!-- Menú de Pestañas: Reutiliza tus estilos globales de botones -->
+    <div style="display: flex; flex-wrap: wrap; gap: 0.2rem; margin-bottom: 1.5rem;">
+        <button class="tab-nav-btn" style="background-color: #38bdf8; color: #020617; font-weight: bold;" onclick="showTab(0)">1. Intro a la ciberseguridad</button>
+        <button class="tab-nav-btn" onclick="showTab(1)">2. Conceptos básicos de redes</button>
+        <button class="tab-nav-btn" onclick="showTab(2)">3. Dispositivos de red</button>
+        <button class="tab-nav-btn" onclick="showTab(3)">4. Seguridad en terminales</button>
+        <button class="tab-nav-btn" onclick="showTab(4)">5. Administración de amenazas</button>
+        <button class="tab-nav-btn" onclick="showTab(5)">6. Analista Junior</button>
+        <button class="tab-nav-btn" onclick="showTab(6)">7. Hacker ético</button>
     </div>
 
-    <!-- Pestañas -->
-    <div class="cert-tabs">
-        <button class="cert-tab-btn active" onclick="showTab(0)">1. Intro a la ciberseguridad</button>
-        <button class="cert-tab-btn" onclick="showTab(1)">2. Conceptos básicos de redes</button>
-        <button class="cert-tab-btn" onclick="showTab(2)">3. Dispositivos de red</button>
-        <button class="cert-tab-btn" onclick="showTab(3)">4. Seguridad en terminales</button>
-        <button class="cert-tab-btn" onclick="showTab(4)">5. Administración de amenazas</button>
-        <button class="cert-tab-btn" onclick="showTab(5)">6. Analista Junior</button>
-        <button class="cert-tab-btn" onclick="showTab(6)">7. Hacker ético</button>
-    </div>
+    <!-- Panel 1: Introducción a la Ciberseguridad -->
+    <div class="cert-panel" id="panel-0" style="display: block;">
+        <section>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Cisco NetAcad</span>
+                <span class="tag">Fundamentos</span>
+            </div>
+            <h2>Introducción a la ciberseguridad</h2>
+            <p>Cursar este módulo representó mi primer contacto formal con el mundo de la ciberseguridad como disciplina estructurada. Antes de esta certificación, tenía nociones básicas adquiridas de forma autodidacta, pero fue aquí donde comprendí la magnitud real del problema: millones de dispositivos comprometidos, datos robados y sistemas críticos vulnerados a diario en todo el mundo.</p>
+            <p>El curso me permitió identificar los tipos de amenazas más comunes —malware, phishing, ingeniería social, ransomware— y entender por qué la ciberseguridad no es solo responsabilidad de los expertos técnicos, sino de cada usuario conectado a internet. Uno de los aprendizajes más impactantes fue comprender el concept de la "superficie de ataque" y cómo cada dispositivo IoT, aplicación o cuenta sin proteger amplía las oportunidades para un atacante.</p>
+            <p>A nivel personal, este módulo me motivó a adoptar buenas prácticas inmediatas: uso de contraseñas robustas, autenticación de dos factores y mayor cuidado con los correos sospechosos. Profesionalmente, sentó las bases conceptuales que me permitieron avanzar con mayor solidez en los módulos posteriores. El reto principal fue asimilar la amplitud del campo en tan poco tiempo, pero eso mismo me generó curiosidad por profundizar... Sin duda, fue el punto de partida que definió mi interés serio por la ciberseguridad como carrera.</p>
 
-    <!-- ══════════════════════════════ PANEL 1 ══════════════════════════════ -->
-    <div class="cert-panel active" id="panel-0">
-        <div class="cert-card">
-            <div class="cert-meta">
-                <span class="cert-tag">Cisco NetAcad</span>
-                <span class="cert-tag">Fundamentos</span>
-            </div>
-            <h3>Introducción a la ciberseguridad</h3>
-            <p>Cursar este módulo representó mi primer contacto formal con el mundo de la ciberseguridad como disciplina estructurada.
-            Antes de esta certificación, tenía nociones básicas adquiridas de forma autodidacta, pero fue aquí donde comprendí la magnitud
-            real del problema: millones de dispositivos comprometidos, datos robados y sistemas críticos vulnerados a diario en todo el mundo.</p>
-            <p>El curso me permitió identificar los tipos de amenazas más comunes —malware, phishing, ingeniería social, ransomware— y
-            entender por qué la ciberseguridad no es solo responsabilidad de los expertos técnicos, sino de cada usuario conectado a
-            internet. Uno de los aprendizajes más impactantes fue comprender el concepto de la "superficie de ataque" y cómo cada
-            dispositivo IoT, aplicación o cuenta sin proteger amplía las oportunidades para un atacante.</p>
-            <p>A nivel personal, este módulo me motivó a adoptar buenas prácticas inmediatas: uso de contraseñas robustas, autenticación
-            de dos factores y mayor cuidado con los correos sospechosos. Profesionalmente, sentó las bases conceptuales que me permitieron
-            avanzar con mayor solidez en los módulos posteriores. El reto principal fue asimilar la amplitud del campo en tan poco tiempo,
-            pero eso mismo me generó curiosidad por profundizar en cada área. Sin duda, fue el punto de partida que definió mi interés
-            serio por la ciberseguridad como carrera.</p>
-        </div>
-        <div class="cert-evidencias">
-            <div class="cert-evidencia-box">
-                <h4>📄 Certificado (PDF)</h4>
-                <!-- Cuando tengas el PDF: cambia el href y quita la clase "disabled" -->
-                <span class="placeholder-icon">📂</span>
-               
-                <a class="btn-evidencia btn-pdf-cert disabled" href="#">Ver certificado</a>
-            </div>
-            <div class="cert-evidencia-box">
-                <h4>🏅 Badge Digital</h4>
-                <!-- Cuando tengas el badge: pega aquí el embed de Credly -->
-                <div class="badge-placeholder">🛡️</div>
-            
-                <a class="btn-evidencia disabled" href="#">Ver badge verificable</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════════════════════════ PANEL 2 ══════════════════════════════ -->
-    <div class="cert-panel" id="panel-1">
-        <div class="cert-card">
-            <div class="cert-meta">
-                <span class="cert-tag">Cisco NetAcad</span>
-                <span class="cert-tag">Redes</span>
-            </div>
-            <h3>Conceptos básicos de redes</h3>
-            <p>Este módulo fue fundamental para comprender cómo funciona la infraestructura sobre la que opera todo el ecosistema
-            digital que buscamos proteger. Entender cómo viajan los datos a través de redes, qué protocolos intervienen y cómo
-            se organizan las capas del modelo OSI y TCP/IP me dio una perspectiva completamente nueva sobre la seguridad.</p>
-            <p>Aprendí a identificar los diferentes tipos de redes (LAN, WAN, WLAN), comprender el funcionamiento de protocolos
-            esenciales como DNS, DHCP, HTTP/S y TCP/UDP, y reconocer cómo cada capa del modelo de red presenta vectores de
-            ataque específicos. Uno de los puntos que más me marcó fue entender que muchos ataques —como el man-in-the-middle
-            o el ARP spoofing— explotan precisamente las debilidades en el diseño original de estos protocolos, creados en una
-            época donde la seguridad no era prioridad.</p>
-            <p>El mayor reto fue memorizar e interiorizar la cantidad de protocolos y sus puertos asociados, pero con la práctica
-            y las actividades del curso logré asimilarlos de forma natural. Este conocimiento resultó directamente aplicable en
-            las prácticas de pentesting posteriores, donde identificar tráfico de red sospechoso o puertos abiertos innecesariamente
-            fue clave para el análisis de vulnerabilidades. Ningún analista de ciberseguridad puede operar sin una base sólida en redes.</p>
-        </div>
-        <div class="cert-evidencias">
-            <div class="cert-evidencia-box">
-                <h4>📄 Certificado (PDF)</h4>
-                <span class="placeholder-icon">📂</span>
-                <p class="placeholder">Sube el PDF al repo y actualiza el enlace</p>
-                <a class="btn-evidencia btn-pdf-cert disabled" href="#">Ver certificado</a>
-            </div>
-            <div class="cert-evidencia-box">
-                <h4>🏅 Badge Digital</h4>
-                <div class="badge-placeholder">🌐</div>
-                <p class="placeholder">Agrega tu badge de Credly</p>
-                <a class="btn-evidencia disabled" href="#">Ver badge verificable</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════════════════════════ PANEL 3 ══════════════════════════════ -->
-    <div class="cert-panel" id="panel-2">
-        <div class="cert-card">
-            <div class="cert-meta">
-                <span class="cert-tag">Cisco NetAcad</span>
-                <span class="cert-tag">Infraestructura</span>
-            </div>
-            <h3>Dispositivos de red y configuración inicial</h3>
-            <p>Pasar de la teoría a la configuración práctica de dispositivos de red fue uno de los saltos más satisfactorios de
-            todo el programa. Este módulo me permitió trabajar directamente con routers y switches —en entorno simulado con
-            Cisco Packet Tracer— aplicando configuraciones básicas de seguridad desde el primer momento.</p>
-            <p>Entre los aprendizajes más valiosos están: configurar contraseñas de acceso a dispositivos, establecer VLANs para
-            segmentar redes, habilitar SSH en lugar de Telnet para acceso remoto seguro, y entender el proceso de hardening
-            básico de equipos de red. Cada práctica reforzó la idea de que la seguridad debe integrarse desde la configuración
-            inicial, no añadirse después como parche.</p>
-            <p>El principal reto fue familiarizarse con la CLI de Cisco IOS, cuya sintaxis es muy específica y no perdona errores
-            de escritura. Sin embargo, esto me enseñó disciplina y atención al detalle —habilidades esenciales en cualquier rol
-            técnico de ciberseguridad. Este módulo me hizo valorar la importancia de los estándares de configuración y la
-            documentación, ya que una configuración mal documentada puede volverse una vulnerabilidad en sí misma.</p>
-        </div>
-        <div class="cert-evidencias">
-            <div class="cert-evidencia-box">
-                <h4>📄 Certificado (PDF)</h4>
-                <span class="placeholder-icon">📂</span>
-                <p class="placeholder">Sube el PDF al repo y actualiza el enlace</p>
-                <a class="btn-evidencia btn-pdf-cert disabled" href="#">Ver certificado</a>
-            </div>
-            <div class="cert-evidencia-box">
-                <h4>🏅 Badge Digital</h4>
-                <div class="badge-placeholder">🔧</div>
-                <p class="placeholder">Agrega tu badge de Credly</p>
-                <a class="btn-evidencia disabled" href="#">Ver badge verificable</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════════════════════════ PANEL 4 ══════════════════════════════ -->
-    <div class="cert-panel" id="panel-3">
-        <div class="cert-card">
-            <div class="cert-meta">
-                <span class="cert-tag">Cisco NetAcad</span>
-                <span class="cert-tag">Endpoint Security</span>
-            </div>
-            <h3>Seguridad en terminales</h3>
-            <p>Este módulo cambió mi perspectiva sobre uno de los puntos más críticos —y frecuentemente subestimados— de la
-            ciberseguridad: el endpoint. Mientras que muchas estrategias de seguridad se enfocan en el perímetro de la red,
-            los dispositivos finales como laptops, smartphones y servidores son el objetivo final de la mayoría de los ataques.</p>
-            <p>Aprendí sobre los diferentes tipos de malware y cómo operan en los sistemas operativos, las técnicas de detección
-            basadas en firmas y comportamiento, el funcionamiento de los antivirus y EDR (Endpoint Detection and Response),
-            y la importancia de mantener los sistemas actualizados y con parches aplicados. También exploramos la gestión de
-            políticas de seguridad en entornos empresariales mediante herramientas de administración centralizada.</p>
-            <p>El aspecto más retador fue entender cómo los atacantes logran evadir los mecanismos de detección tradicionales,
-            lo que me llevó a comprender por qué la seguridad en capas (defensa en profundidad) es la estrategia más robusta.
-            Este módulo me dio las bases para analizar comportamientos sospechosos en sistemas y actuar de forma más informada
-            ante posibles incidentes de seguridad en dispositivos de usuario final.</p>
-        </div>
-        <div class="cert-evidencias">
-            <div class="cert-evidencia-box">
-                <h4>📄 Certificado (PDF)</h4>
-                <span class="placeholder-icon">📂</span>
-                <p class="placeholder">Sube el PDF al repo y actualiza el enlace</p>
-                <a class="btn-evidencia btn-pdf-cert disabled" href="#">Ver certificado</a>
-            </div>
-            <div class="cert-evidencia-box">
-                <h4>🏅 Badge Digital</h4>
-                <div class="badge-placeholder">💻</div>
-                <p class="placeholder">Agrega tu badge de Credly</p>
-                <a class="btn-evidencia disabled" href="#">Ver badge verificable</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════════════════════════ PANEL 5 ══════════════════════════════ -->
-    <div class="cert-panel" id="panel-4">
-        <div class="cert-card">
-            <div class="cert-meta">
-                <span class="cert-tag">Cisco NetAcad</span>
-                <span class="cert-tag">Threat Management</span>
-            </div>
-            <h3>Administración de amenazas cibernéticas</h3>
-            <p>Este módulo representó un salto significativo hacia el pensamiento estratégico en ciberseguridad. Ya no se trataba
-            solo de entender amenazas individuales, sino de aprender a administrar el riesgo de forma sistemática y continua
-            dentro de una organización. Fue aquí donde el rol del analista de ciberseguridad comenzó a tomar forma concreta para mí.</p>
-            <p>Los temas más relevantes incluyeron la inteligencia de amenazas (threat intelligence), los Indicadores de Compromiso
-            (IoCs), el uso de plataformas SIEM para correlación de eventos, y los procesos de respuesta a incidentes. También
-            estudié frameworks como MITRE ATT&CK, que organiza las tácticas y técnicas de los atacantes de manera que permiten
-            anticipar y detectar patrones de ataque de forma más efectiva.</p>
-            <p>El mayor aprendizaje fue entender que en ciberseguridad la pregunta no es "si" ocurrirá un incidente, sino "cuándo",
-            y que la preparación y los procesos son tan importantes como las herramientas técnicas. El reto principal fue la
-            complejidad de los entornos SIEM y la cantidad de información que generan, lo que me hizo apreciar la importancia
-            del análisis crítico para distinguir señales de ruido. Este módulo me preparó para pensar como analista SOC.</p>
-        </div>
-        <div class="cert-evidencias">
-            <div class="cert-evidencia-box">
-                <h4>📄 Certificado (PDF)</h4>
-                <span class="placeholder-icon">📂</span>
-                <p class="placeholder">Sube el PDF al repo y actualiza el enlace</p>
-                <a class="btn-evidencia btn-pdf-cert disabled" href="#">Ver certificado</a>
-            </div>
-            <div class="cert-evidencia-box">
-                <h4>🏅 Badge Digital</h4>
-                <div class="credly-wrapper">
-                    <div data-iframe-width="150" data-iframe-height="270"
-                         data-share-badge-id="3e9972d5-6ddc-43e2-a13a-1bd77e2e1d7d"
-                         data-share-badge-host="https://www.credly.com"></div>
-                    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            <div class="actividades-grid">
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>📄 Certificado (PDF)</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">📂</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Sube el PDF al repo y actualiza el enlace</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver certificado</a>
+                </div>
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>🏅 Badge Digital</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">🛡️</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Agrega tu badge de Credly</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver badge</a>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
-    <!-- ══════════════════════════════ PANEL 6 ══════════════════════════════ -->
-    <div class="cert-panel" id="panel-5">
-        <div class="cert-card">
-            <div class="cert-meta">
-                <span class="cert-tag">Cisco NetAcad</span>
-                <span class="cert-tag">Desarrollo Profesional</span>
+    <!-- Panel 2: Conceptos Básicos de Redes -->
+    <div class="cert-panel" id="panel-1" style="display: none;">
+        <section>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Cisco NetAcad</span>
+                <span class="tag">Redes</span>
             </div>
-            <h3>Carrera Profesional de Analista Junior en Ciberseguridad</h3>
-            <p>Este módulo fue distinto a todos los demás porque no se centró en habilidades técnicas, sino en algo igualmente
-            crítico: la construcción de una carrera profesional sólida en ciberseguridad. Para alguien como yo, que está a
-            punto de graduarse, este contenido resultó especialmente valioso y oportuno.</p>
-            <p>Aprendí sobre las diferentes trayectorias profesionales dentro del campo —desde roles defensivos como analista SOC
-            hasta ofensivos como pentester o red teamer—, la importancia de las certificaciones reconocidas por la industria
-            (CompTIA Security+, CEH, OSCP), cómo construir un portafolio técnico convincente, y las habilidades blandas que
-            distinguen a un profesional de excelencia: comunicación efectiva, pensamiento crítico y ética profesional.</p>
-            <p>Una reflexión personal importante: este módulo me hizo cuestionar mis suposiciones sobre lo que significa "estar
-            listo" para el mercado laboral. No se trata de saberlo todo, sino de demostrar capacidad de aprendizaje continuo,
-            pensamiento analítico y compromiso ético. Salí con un plan más claro sobre los pasos concretos que debo tomar
-            —comenzando por este portafolio— para posicionarme como un profesional competente en ciberseguridad.</p>
-        </div>
-        <div class="cert-evidencias">
-            <div class="cert-evidencia-box">
-                <h4>📄 Certificado (PDF)</h4>
-                <span class="placeholder-icon">📂</span>
-                <p class="placeholder">Sube el PDF al repo y actualiza el enlace</p>
-                <a class="btn-evidencia btn-pdf-cert disabled" href="#">Ver certificado</a>
-            </div>
-            <div class="cert-evidencia-box">
-                <h4>🏅 Badge Digital</h4>
-                <div class="badge-placeholder">🎯</div>
-                <p class="placeholder">Agrega tu badge de Credly</p>
-                <a class="btn-evidencia disabled" href="#">Ver badge verificable</a>
-            </div>
-        </div>
-    </div>
+            <h2>Conceptos básicos de redes</h2>
+            <p>Este módulo fue fundamental para comprender cómo funciona la infraestructura sobre la que opera todo el ecosistema digital que buscamos proteger. Entender cómo viajan los datos a través de redes, qué protocolos intervienen y cómo se organizan las capas del modelo OSI y TCP/IP me dio una perspectiva completamente nueva sobre la seguridad.</p>
+            <p>Aprendí a identificar los diferentes tipos de redes (LAN, WAN, WLAN), comprender el funcionamiento de protocolos esenciales como DNS, DHCP, HTTP/S y TCP/UDP, y reconocer cómo cada capa del modelo de red presenta vectores de ataque específicos...</p>
 
-    <!-- ══════════════════════════════ PANEL 7 ══════════════════════════════ -->
-    <div class="cert-panel" id="panel-6">
-        <div class="cert-card">
-            <div class="cert-meta">
-                <span class="cert-tag">Cisco NetAcad</span>
-                <span class="cert-tag">Ethical Hacking</span>
-            </div>
-            <h3>Hacker ético</h3>
-            <p>Sin lugar a dudas, este fue el módulo más emocionante e intenso de toda la ruta de certificación. Aprender a
-            pensar y actuar como un atacante —dentro de un marco legal y ético— es una de las habilidades más demandadas y
-            mejor remuneradas en la industria de la ciberseguridad, y este curso me dio una introducción sólida a ese mundo.</p>
-            <p>El programa cubrió las fases del pentesting: reconocimiento (activo y pasivo), escaneo y enumeración, explotación
-            de vulnerabilidades, post-explotación y generación de reportes. Trabajé con herramientas como Nmap, Metasploit,
-            Wireshark y Burp Suite en entornos controlados, aplicando metodologías estructuradas para identificar y explotar
-            vulnerabilidades de forma responsable. También se enfatizó la importancia del reporte técnico claro y profesional,
-            ya que de nada sirve encontrar vulnerabilidades si no se comunican adecuadamente a los equipos responsables.</p>
-            <p>El mayor reto fue la mentalidad: pasar de pensar en "cómo proteger" a "cómo atacar" requiere un cambio de
-            perspectiva que no es inmediato. También fue retador mantener siempre presente el marco ético —actuar solo con
-            autorización explícita, documentar todo y respetar el alcance definido. Este módulo consolidó mi interés en el
-            área ofensiva de la ciberseguridad como especialización futura.</p>
-        </div>
-        <div class="cert-evidencias">
-            <div class="cert-evidencia-box">
-                <h4>📄 Certificado (PDF)</h4>
-                <span class="placeholder-icon">📂</span>
-                <p class="placeholder">Sube el PDF al repo y actualiza el enlace</p>
-                <a class="btn-evidencia btn-pdf-cert disabled" href="#">Ver certificado</a>
-            </div>
-            <div class="cert-evidencia-box">
-                <h4>🏅 Badge Digital</h4>
-                <div class="credly-wrapper">
-                    <div data-iframe-width="150" data-iframe-height="270"
-                         data-share-badge-id="f582e2d6-7958-47e6-bf9d-5996a9165307"
-                         data-share-badge-host="https://www.credly.com"></div>
-                    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            <div class="actividades-grid">
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>📄 Certificado (PDF)</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">📂</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Sube el PDF al repo y actualiza el enlace</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver certificado</a>
+                </div>
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>🏅 Badge Digital</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">🌐</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Agrega tu badge de Credly</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver badge</a>
                 </div>
             </div>
-        </div>
+        </section>
+    </div>
+
+    <!-- Panel 3: Dispositivos de Red -->
+    <div class="cert-panel" id="panel-2" style="display: none;">
+        <section>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Cisco NetAcad</span>
+                <span class="tag">Infraestructura</span>
+            </div>
+            <h2>Dispositivos de red y configuración inicial</h2>
+            <p>Pasar de la teoría a la configuración práctica de dispositivos de red fue uno de los saltos más satisfactorios de todo el programa. Este módulo me permitió trabajar directamente con routers y switches —en entorno simulado con Cisco Packet Tracer— aplicando configuraciones básicas de seguridad desde el primer momento...</p>
+
+            <div class="actividades-grid">
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>📄 Certificado (PDF)</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">📂</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Sube el PDF al repo y actualiza el enlace</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver certificado</a>
+                </div>
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>🏅 Badge Digital</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">🔧</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Agrega tu badge de Credly</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver badge</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Panel 4: Seguridad en Terminales -->
+    <div class="cert-panel" id="panel-3" style="display: none;">
+        <section>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Cisco NetAcad</span>
+                <span class="tag">Endpoint Security</span>
+            </div>
+            <h2>Seguridad en terminales</h2>
+            <p>Este módulo cambió mi perspectiva sobre uno de los puntos más críticos —y frecuentemente subestimados— de la ciberseguridad: el endpoint. Mientras que muchas estrategias de seguridad se enfocan en el perímetro de la red, los dispositivos finales como laptops, smartphones y servidores son el objetivo final de la mayoría de los ataques...</p>
+
+            <div class="actividades-grid">
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>📄 Certificado (PDF)</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">📂</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Sube el PDF al repo y actualiza el enlace</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver certificado</a>
+                </div>
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>🏅 Badge Digital</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">💻</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Agrega tu badge de Credly</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver badge</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Panel 5: Administración de Threats -->
+    <div class="cert-panel" id="panel-4" style="display: none;">
+        <section>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Cisco NetAcad</span>
+                <span class="tag">Threat Management</span>
+            </div>
+            <h2>Administración de amenazas cibernéticas</h2>
+            <p>Este módulo representó un salto significativo hacia el pensamiento estratégico en ciberseguridad. Ya no se trataba solo de entender amenazas individuales, sino de aprender a administrar el riesgo de forma sistemática y continua dentro de una organización...</p>
+
+            <div class="actividades-grid">
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>📄 Certificado (PDF)</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">📂</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Sube el PDF al repo y actualiza el enlace</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver certificado</a>
+                </div>
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>🏅 Badge Digital</h3>
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 200px; margin-top: 10px;">
+                        <div data-iframe-width="150" data-iframe-height="270"
+                             data-share-badge-id="3e9972d5-6ddc-43e2-a13a-1bd77e2e1d7d"
+                             data-share-badge-host="https://www.credly.com"></div>
+                        <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                    </div>
+                    <a class="btn-read" target="_blank" href="https://www.credly.com/badges/3e9972d5-6ddc-43e2-a13a-1bd77e2e1d7d">Ver badge verificado</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Panel 6: Analista Junior -->
+    <div class="cert-panel" id="panel-5" style="display: none;">
+        <section>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Cisco NetAcad</span>
+                <span class="tag">Desarrollo Profesional</span>
+            </div>
+            <h2>Carrera Profesional de Analista Junior en Ciberseguridad</h2>
+            <p>Este módulo fue distinto a todos los demás porque no se centró en habilidades técnicas, sino en algo igualmente crítico: la construcción de una carrera profesional sólida en ciberseguridad...</p>
+
+            <div class="actividades-grid">
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>📄 Certificado (PDF)</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">📂</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Sube el PDF al repo y actualiza el enlace</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver certificado</a>
+                </div>
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>🏅 Badge Digital</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">🎯</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Agrega tu badge de Credly</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver badge</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Panel 7: Hacker Ético -->
+    <div class="cert-panel" id="panel-6" style="display: none;">
+        <section>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Cisco NetAcad</span>
+                <span class="tag">Ethical Hacking</span>
+            </div>
+            <h2>Hacker ético</h2>
+            <p>Sin lugar a dudas, este fue el módulo más emocionante e intenso de toda la ruta de certificación. Aprender a pensar y actuar como un atacante —dentro de un marco legal y ético— es una de las habilidades más demanadas...</p>
+
+            <div class="actividades-grid">
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>📄 Certificado (PDF)</h3>
+                    <p style="font-size: 2.5rem; margin: 0.5rem 0;">📂</p>
+                    <p style="color: #475569; font-size: 0.85rem; font-style: italic;">Sube el PDF al repo y actualiza el enlace</p>
+                    <a class="btn-read" style="background-color: #1e293b; color: #475569; cursor: not-allowed; pointer-events: none;" href="#">Ver certificado</a>
+                </div>
+                <div class="actividad-card" style="text-align: center;">
+                    <h3>🏅 Badge Digital</h3>
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 200px; margin-top: 10px;">
+                        <div data-iframe-width="150" data-iframe-height="270"
+                             data-share-badge-id="f582e2d6-7958-47e6-bf9d-5996a9165307"
+                             data-share-badge-host="https://www.credly.com"></div>
+                        <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                    </div>
+                    <a class="btn-read" target="_blank" href="https://www.credly.com/badges/f582e2d6-7958-47e6-bf9d-5996a9165307">Ver badge verificado</a>
+                </div>
+            </div>
+        </section>
     </div>
 
 </main>
@@ -553,18 +280,30 @@
     <p>Portafolio académico – Seguridad Informática | Rodolfo Cavazos Zacarías · 178823</p>
 </footer>
 
+<!-- ENLACE DE TU JAVASCRIPT EXTERNO GLOBAL -->
 <script src="js_index.js"></script>
+<!-- JavaScript Local para Pestañas -->
 <script>
     function showTab(index) {
         document.querySelectorAll('.cert-panel').forEach((panel, i) => {
-            panel.classList.toggle('active', i === index);
+            panel.style.display = (i === index) ? 'block' : 'none';
         });
-        document.querySelectorAll('.cert-tab-btn').forEach((btn, i) => {
-            btn.classList.toggle('active', i === index);
+        
+        document.querySelectorAll('.tab-nav-btn').forEach((btn, i) => {
+            if (i === index) {
+                btn.style.backgroundColor = '#38bdf8';
+                btn.style.color = '#020617';
+                btn.style.fontWeight = 'bold';
+            } else {
+                btn.style.backgroundColor = '#38bdf8';
+                btn.style.color = '#020617';
+                btn.style.fontWeight = 'normal';
+            }
         });
-        document.querySelector('.cert-tabs').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 </script>
+
+
 
 </body>
 </html>

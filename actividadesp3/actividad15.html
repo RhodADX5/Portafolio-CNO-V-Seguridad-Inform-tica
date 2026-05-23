@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 15 | SET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p3.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 3</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 15: Ataques de Ingeniería Social con SEToolkit</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento formal de la práctica (PDF):</p>
+                <a href="pdfs/Act15-Equipo4.pdf" download class="btn-read btn-pdf">Descargar Artículo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    La ingeniería social explota vulnerabilidades en el factor humano, tales como la confianza, el sentido de urgencia y la autoridad, para burlar perímetros tecnológicos corporativos[cite: 8]. De acuerdo con métricas de la industria, la manipulación psicológica sigue superando las brechas estrictamente lógicas. El proceso de simulación ofensiva inicia con la fase de *Weaponization* o armamento, replicando el código visual legítimo de interfaces conocidas para evadir las sospechas iniciales de la víctima.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico</h3>
+                <p>
+                    Para esta auditoría, se desplegó un vector de correo masivo (<code>Mass Mailer Attack</code>) utilizando la suite de automatización <code>SEToolkit v8.0.3</code> alojada en Kali Linux. Debido a los esquemas modernos de protección que deshabilitan accesos inseguros directos, se levantó un puente SMTP intermedio configurando las credenciales de relay mediante el servicio externo <b>Brevo</b> en el puerto <code>587</code> bajo directivas de cifrado <code>STARTTLS</code>.
+                </p>
+                <pre>
+Parámetros del Vector de Ataque:
+• Módulo: Social-Engineering Attacks -> Mass Mailer Attack
+• Conexión: smtp-relay.brevo.com (Puerto 587)
+• Template: One-Time Use Email Template (HTML)
+• Objetivo: Tu OneDrive está a punto de eliminarse</pre>
+                <p>
+                    El cuerpo del mensaje incluyó una estructura de código clonada con variables dinámicas de suplantación dirigidas a cuentas de prueba, forzando la redirección de formularios hacia un Listener propio.
+                </p>
+            </section>
+
+            <section>
+                <h3>3. Material Multimedia</h3>
+                <p>A continuación se integran los testigos gráficos asociados a la configuración de credenciales del servidor SMTP Relay de Brevo, el flujo secuencial en la terminal de Kali Linux y la bandeja de entrada receptora:</p>
+                
+                <!-- ESPACIO PARA TUS IMÁGENES -->
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="imagenes/set_config_smtp.png" alt="Configuración de credenciales de Brevo" class="img-evidencia">
+                    <p style="color: #cbd5f5; font-size: 0.85rem; font-style: italic;">Figura 15.1: Panel de administración SMTP Relay y Claves API.</p>
+                </div>
+
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="imagenes/set_terminal_menu.png" alt="Menú de ataques masivos de SEToolkit" class="img-evidencia">
+                    <p style="color: #cbd5f5; font-size: 0.85rem; font-style: italic;">Figura 15.2: Flujo de selección del Mass Mailer Vector e inyección de plantilla HTML.</p>
+                </div>
+
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="imagenes/set_correo_recibido.png" alt="Visualización del correo de Phishing en bandeja" class="img-evidencia">
+                    <p style="color: #cbd5f5; font-size: 0.85rem; font-style: italic;">Figura 15.3: Recepción de alerta fraudulenta con filtrado preventivo del cliente de correo.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnica</h3>
+                <p>
+                    Como profesionales de TI, esta práctica evidencia que los perímetros técnicos rígidos quedan obsoletos si no existe una cultura sólida de concientización en los usuarios finales. Es notable comprobar cómo herramientas automatizadas pueden saltarse restricciones básicas mediante retransmisores legítimos[cite: 8]. Los mecanismos defensivos no deben basarse exclusivamente en validaciones visuales, sino en la adopción estricta de <b>MFA (Autenticación Multifactor)</b> y el análisis predictivo de firmas criptográficas SPF/DMARC en las cabeceras de red.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>TrustedSec (2026). Social-Engineer Toolkit (SET) User Manual v8.0.</li>
+                    <li>Verizon Data Breach Investigations Report (DBIR) 2023.</li>
+                    <li>RFC 7505 - SMTP Transport Tunnel Enforcement and Extension Framework.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo Cavazos Zacarías</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 18 | Modelo Diamante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_articulos.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../actividades_p3.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">← Volver al Parcial 3</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <article class="contenido-completo">
+            <h1>Actividad 18: Análisis de Intrusiones con el Modelo Diamante</h1>
+
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid #1e293b; padding-bottom: 20px;">
+                <p>Documento formal de la práctica (PDF):</p>
+                <a href="pdfs/act18-Equipo4.pdf" download class="btn-read btn-pdf">Descargar Artículo</a>
+            </div>
+
+            <section>
+                <h3>1. Introducción Contextual</h3>
+                <p>
+                    El rastreo de incidentes informáticos exige marcos analíticos capaces de estructurar la correlación de eventos. El <code>Modelo Diamante de Análisis de Intrusiones</code> mapea la actividad maliciosa vinculando de forma dinámica cuatro nodos esenciales interconectados: Adversario, Capacidad, Infraestructura y Víctima. Cruzar esta metodología con la secuencia táctica de la <code>Cyber Kill Chain</code> provee visibilidad integral del compromiso lógicamente estructurado de una red.
+                </p>
+            </section>
+
+            <section>
+                <h3>2. Desarrollo Técnico</h3>
+                <p>
+                    Se analizó un incidente forense donde un host interno manifestó un comportamiento anómalo tras la ejecución de código dañino. Los componentes identificados dentro del esquema lógico del diamante se distribuyeron bajo las siguientes características de eventos:
+                </p>
+                <ul>
+                    <li><b>Adversario:</b> Atacante externo o sindicato cibercriminal rastreado mediante análisis WHOIS de registros y geolocalización IP.</li>
+                    <li><b>Capacidad:</b> Malware avanzado configurado para realizar resoluciones DNS forzadas y habilitar llamadas remotas de ejecución.</li>
+                    <li><b>Infraestructura:</b> Nombres de dominio externos vinculados a servidores persistentes de Comando y Control (C2).</li>
+                    <li><b>Víctima Primaria:</b> Host corporativo perteneciente al administrador de la infraestructura interna de la organización.</li>
+                </ul>
+                <p>
+                    El análisis de red detectó la fase de <i>Comando y Control</i> mediante la salida recurrente de paquetes de datos hacia direcciones externas. Asimismo, la persistencia de logs de hosts paralelos conectándose a las mismas IPs evidenció técnicas activas de <b>Movimiento Lateral (Pivoting)</b>, empleando el primer dispositivo comprometido (Víctima 1) como puente de salto técnico hacia nuevos segmentos de la organización (Víctima 2).
+                </p>
+            </section>
+
+            <section>
+                <h3>3. Material Multimedia</h3>
+                <p>A continuación se integra el esquema visual que detalla la interconexión del Modelo Diamante y los mapas de hilos de actividad del Pivoting dentro de la red interna:</p>
+                
+                <!-- ESPACIO PARA TUS IMÁGENES -->
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="imagenes/pivoting_kill_chain.png" alt="Flujo de Pivoting de la Víctima 1 a la Víctima 2" class="img-evidencia">
+                    <p style="color: #cbd5f5; font-size: 0.85rem; font-style: italic;">Figura 18.1: Hilos de actividad táctica demostrando el puenteo interno de la red.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. Opinión y Reflexión Técnica</h3>
+                <p>
+                    Como estudiantes de ingeniería, el análisis lúdico con el Framework del Diamante y la Kill Chain nos enseña que un incidente de intrusión nunca es un hecho aislado. Entender la infraestructura externa C2 del adversario y mapear cómo mutan sus capacidades ofensivas dota al equipo de Blue Team de la inteligencia de amenazas (*Threat Intelligence*) necesaria para cortar la cadena de ejecución antes del compromiso total. El monitoreo y aislamiento rápido de endpoints infectados corta los hilos de pivoting y preserva la integridad corporativa.
+                </p>
+            </section>
+
+            <section>
+                <h3>5. Referencias Técnicas</h3>
+                <ul style="color: #cbd5f5; font-size: 0.9rem;">
+                    <li>Center for Cyber Intelligence Analysis and Threat Research (CCIATR) - The Diamond Model for Intrusion Analysis.</li>
+                    <li>Lockheed Martin (2026). Cyber Kill Chain Framework for Information Operations.</li>
+                    <li>MITRE ATT&CK Framework - Technical Analysis for Pivoting and Lateral Movement (T1090).</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Portafolio académico – Seguridad Informática | Rodolfo Cavazos Zacarías</p>
+    </footer>
+
+</body>
+</html>
